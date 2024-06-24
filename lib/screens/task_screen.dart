@@ -5,32 +5,6 @@ class TasksScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          child: Icon(Icons.add),
-        ),
-        body: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.all(30.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Your Tasks',
-                  style: TextStyle(
-                    fontSize: 26,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-                Text(
-                  '12 Tasks',
-                  style: TextStyle(fontSize: 14),
-                ),
-                const SizedBox(height: 20),
-              ],
-            ),
-          ),
-        ));
+    return Container();
   }
 }
