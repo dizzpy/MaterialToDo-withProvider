@@ -8,6 +8,10 @@ class TasksScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.add),
+      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(10.0),
@@ -16,6 +20,8 @@ class TasksScreen extends StatelessWidget {
             children: [
               // Header Section
               HeaderSection(),
+
+              SizedBox(height: 10),
 
               // List View
               TaskList(),
