@@ -5,11 +5,20 @@ import 'package:material_todo/components/task_list.dart';
 class TasksScreen extends StatelessWidget {
   const TasksScreen({super.key});
 
+  Widget buildBottomSheat(BuildContext context) {
+    return Container();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          showModalBottomSheet(
+            context: context,
+            builder: buildBottomSheat,
+          );
+        },
         child: Icon(Icons.add),
       ),
       body: SafeArea(

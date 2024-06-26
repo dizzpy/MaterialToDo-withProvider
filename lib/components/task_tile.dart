@@ -7,13 +7,14 @@ class TaskTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      title: Text('This is task 1'),
-      trailing: Checkbox(
-        value: true,
-        onChanged: (bool) {},
+    return Card(
+      child: ListTile(
+        title: Text('This is task 1'),
+        trailing: Checkbox(
+          value: true,
+          onChanged: (bool) {},
+        ),
       ),
     );
   }
 }
-

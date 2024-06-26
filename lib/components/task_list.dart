@@ -9,16 +9,14 @@ class TaskList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Card(
-        child: Container(
-          child: ListView(
-            children: [
-              TaskTitle(),
-              TaskTitle(),
-              TaskTitle(),
-              TaskTitle(),
-            ],
-          ),
+      child: Container(
+        child: ListView(
+          children: [
+            TaskTitle(),
+            TaskTitle(),
+            TaskTitle(),
+            TaskTitle(),
+          ],
         ),
       ),
     );
