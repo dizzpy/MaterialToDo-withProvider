@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:material_todo/components/header_section.dart';
+import 'package:material_todo/components/task_list.dart';
 
 class TasksScreen extends StatelessWidget {
   const TasksScreen({super.key});
@@ -16,42 +18,11 @@ class TasksScreen extends StatelessWidget {
               Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Task List',
-                      style: TextStyle(
-                        fontSize: 26,
-                      ),
-                    ),
-                    SizedBox(height: 2),
-                    Text(
-                      '12 Tasks',
-                      style: TextStyle(
-                        fontSize: 14,
-                      ),
-                    ),
-                  ],
-                ),
+                child: HeaderSection(),
               ),
 
               // List View
-              Expanded(
-                child: Container(
-                  child: ListView(
-                    children: [
-                      ListTile(
-                        title: Text('This is task 1'),
-                        trailing: Checkbox(
-                          value: false,
-                          onChanged: (bool) {},
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+              TaskList(),
             ],
           ),
         ),
