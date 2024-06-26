@@ -14,12 +14,8 @@ class TasksScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Top Section
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
-                child: HeaderSection(),
-              ),
+              // Header Section
+              HeaderSection(),
 
               // List View
               TaskList(),
