@@ -6,9 +6,36 @@ class AddTaskScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Center(
-        child: Text('Hey'),
-      ),
-    );
+        child: Column(
+      children: [
+        // Title
+        Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Text(
+            'Add New Task Here',
+            style: TextStyle(fontSize: 18),
+          ),
+        ),
+        SizedBox(height: 10),
+        // Text box
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 40),
+          child: TextField(
+            decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              hintText: 'Enter task name',
+            ),
+          ),
+        ),
+
+        SizedBox(height: 10),
+
+        // Button
+        FilledButton(
+          onPressed: () => {},
+          child: Text('Add New Task'),
+        )
+      ],
+    ));
   }
 }
