@@ -35,8 +35,12 @@ class AddTaskScreen extends StatelessWidget {
           // Button
           FilledButton(
             onPressed: () {
-              addTaskCallback(getTaskController.text);
-              Navigator.pop(context);
+              if (getTaskController.text == '') {
+                // model
+              } else {
+                addTaskCallback(getTaskController.text);
+                Navigator.pop(context);
+              }
             },
             child: Text('Add New Task'),
           ),

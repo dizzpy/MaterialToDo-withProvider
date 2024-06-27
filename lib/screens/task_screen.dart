@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:material_todo/components/header_section.dart';
 import 'package:material_todo/components/task_list.dart';
 import 'package:material_todo/models/task.dart';
 import 'package:material_todo/screens/add_task_screen.dart';
@@ -45,8 +44,31 @@ class _TasksScreenState extends State<TasksScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // Header Section
-              HeaderSection(),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Task List',
+                      style: TextStyle(
+                        fontSize: 26,
+                      ),
+                    ),
+                    SizedBox(height: 2),
+                    Text(
+                      '${widget.taskList.length} Tasks',
+                      style: TextStyle(
+                        fontSize: 14,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
               SizedBox(height: 10),
+
               // List View
               Expanded(child: TaskList(taskList: widget.taskList)),
             ],

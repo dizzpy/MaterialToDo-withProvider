@@ -26,9 +26,27 @@ class _TaskListState extends State<TaskList> {
         return Dismissible(
           key: Key(widget.taskList[index].name),
           onDismissed: (direction) {
+            // Store the task name before deleting
+            String deletedTaskName = widget.taskList[index].name;
+
+            // Remove the item from the list
+
             deleteTask(index);
+
+            // Show a snackbar with the option to undo the deletion
             ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text('${widget.taskList[index].name} dismissed')),
+              SnackBar(
+                content: Text('$deletedTaskName deleted'),
+                action: SnackBarAction(
+                  label: 'UNDO',
+                  onPressed: () {
+                    setState(() {
+                      widget.taskList
+                          .insert(index, Task(name: deletedTaskName));
+                    });
+                  },
+                ),
+              ),
             );
           },
           background: Container(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class HeaderSection extends StatelessWidget {
-  const HeaderSection({
+  HeaderSection({
     super.key,
   });
 
