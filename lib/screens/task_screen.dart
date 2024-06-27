@@ -1,10 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:material_todo/components/header_section.dart';
 import 'package:material_todo/components/task_list.dart';
+import 'package:material_todo/models/task.dart';
 import 'package:material_todo/screens/add_task_screen.dart';
 
-class TasksScreen extends StatelessWidget {
-  const TasksScreen({super.key});
+class TasksScreen extends StatefulWidget {
+  TasksScreen({super.key});
+
+  @override
+  State<TasksScreen> createState() => _TasksScreenState();
+
+  List<Task> taskList = [];
+}
+
+class _TasksScreenState extends State<TasksScreen> {
+  void addTask(String taskName) {
+    setState(() {
+      widget.taskList.add(Task(name: taskName));
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +31,7 @@ class TasksScreen extends StatelessWidget {
               child: Container(
                 padding: EdgeInsets.only(
                     bottom: MediaQuery.of(context).viewInsets.bottom),
-                child: AddTaskScreen(),
+                child: AddTaskScreen(addTaskCallback: addTask),
               ),
             ),
           );
@@ -32,11 +46,9 @@ class TasksScreen extends StatelessWidget {
             children: [
               // Header Section
               HeaderSection(),
-
               SizedBox(height: 10),
-
               // List View
-              TaskList(),
+              Expanded(child: TaskList(taskList: widget.taskList)),
             ],
           ),
         ),
