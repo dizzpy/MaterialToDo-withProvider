@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class AddTaskScreen extends StatelessWidget {
-  const AddTaskScreen({super.key});
+  AddTaskScreen({super.key});
+
+  final TextEditingController getTaskController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +23,7 @@ class AddTaskScreen extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 40),
           child: TextField(
+            controller: getTaskController,
             decoration: InputDecoration(
               border: OutlineInputBorder(),
               hintText: 'Enter task name',
@@ -32,7 +35,11 @@ class AddTaskScreen extends StatelessWidget {
 
         // Button
         FilledButton(
-          onPressed: () => {},
+          onPressed: () => {
+            print(
+              getTaskController.text,
+            )
+          },
           child: Text('Add New Task'),
         )
       ],
