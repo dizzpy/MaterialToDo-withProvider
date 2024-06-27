@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:material_todo/models/task_data.dart';
 
 class AddTaskScreen extends StatelessWidget {
   final TextEditingController getTaskController = TextEditingController();
-  final Function(String) addTaskCallback;
-
-  AddTaskScreen({super.key, required this.addTaskCallback});
 
   @override
   Widget build(BuildContext context) {
@@ -35,10 +34,9 @@ class AddTaskScreen extends StatelessWidget {
           // Button
           FilledButton(
             onPressed: () {
-              if (getTaskController.text == '') {
-                // model
-              } else {
-                addTaskCallback(getTaskController.text);
+              if (getTaskController.text != '') {
+                Provider.of<TaskData>(context, listen: false)
+                    .addTask(getTaskController.text);
                 Navigator.pop(context);
               }
             },
