@@ -37,9 +37,9 @@ jobs:
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: build/ios/iphoneos/FlutterIpaExport.ipa
-          tag: v1.0
+          tag: v1.0.0
           overwrite: true
-          body: "This is the second release for iOS"
+          body: "This is the first release for iOS"
 
   build-android:
     name: Android Build 🎉
@@ -61,9 +61,9 @@ jobs:
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: build/app/outputs/flutter-apk/app-release.apk
-          tag: v1.0
+          tag: v1.0.0
           overwrite: true
-          body: "This is the second release for Android"
+          body: "This is the first release for Android"
 
   notify:
     name: 📢 Notify
